@@ -9,6 +9,7 @@ public class Board {
 
     public Board(int dimension) {
         this.dimension = dimension;
+        board = new ArrayList<>();
         for (int i = 0; i < dimension; ++i) {
             board.add(new ArrayList<>());
             for (int j = 0; j < dimension; ++j) {
@@ -22,11 +23,12 @@ public class Board {
             System.out.print("| ");
             for (int j = 0; j < dimension; ++j) {
                 if (board.get(i).get(j).getCellState().equals(CellState.FILLED)) {
-                    System.out.print(board.get(i).get(j).getPlayer().getSymbol().getSymbol()+" |");
+                    System.out.print(board.get(i).get(j).getPlayer().getSymbol().getSymbol()+" | ");
                 } else {
-                    System.out.println(" |");
+                    System.out.print("  | ");
                 }
             }
+            System.out.println();
         }
     }
 
@@ -45,4 +47,5 @@ public class Board {
     public void setBoard(List<List<Cell>> board) {
         this.board = board;
     }
+
 }

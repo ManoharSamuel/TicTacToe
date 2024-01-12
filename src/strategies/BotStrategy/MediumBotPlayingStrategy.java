@@ -1,11 +1,11 @@
 package strategies.BotStrategy;
 
 import models.Board;
-import models.Move;
+import models.Cell;
 
 public class MediumBotPlayingStrategy implements BotPlayingStrategy{
     @Override
-    public Move makeMove(Board board) {
+    public Cell makeMove(Board board) {
         return null;
     }
 }

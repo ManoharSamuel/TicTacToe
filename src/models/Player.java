@@ -1,17 +1,29 @@
 package models;
 
-public abstract class Player {
-    String name;
-    Symbol symbol;
-    PlayerType playerType;
+import java.util.Scanner;
+
+public class Player {
+    private final Scanner scanner;
+    private String name;
+    private Symbol symbol;
+    private PlayerType playerType;
 
     public Player(String name, Symbol symbol, PlayerType playerType) {
         this.name = name;
         this.symbol = symbol;
         this.playerType = playerType;
+        this.scanner = new Scanner(System.in);
     }
 
-    public abstract Move makeMove(Board board);
+    public Cell makeMove(Board board){
+        System.out.println("Enter the value for row(starting from 0) :");
+        int row = scanner.nextInt();
+
+        System.out.println("Enter the value for column(starting from 0) :");
+        int column = scanner.nextInt();
+
+        return new Cell(row, column);
+    }
 
     public String getName() {
         return name;

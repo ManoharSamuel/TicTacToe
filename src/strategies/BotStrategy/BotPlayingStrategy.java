@@ -1,8 +1,8 @@
 package strategies.BotStrategy;
 
 import models.Board;
-import models.Move;
+import models.Cell;
 
 public interface BotPlayingStrategy {
-    Move makeMove(Board board);
+    Cell makeMove(Board board);
 }
